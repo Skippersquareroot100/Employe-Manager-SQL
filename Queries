@@ -1,0 +1,31 @@
+select * from employee;
+select * from  manager;
+select name from employee;
+select name, EMPLOYEE_ID from employee;
+select distinct salary from employee;
+select Sum(salary) from employee;
+select Avg(salary) from employee;
+select count(EMPLOYEE_ID) from employee;
+
+select employee_id,Name,salary,salary*2+100
+ as New_Salary from employee;
+
+select employee_id,Name,salary,salary+salary-1000*50/100
+ as New_Salary from employee
+where job='Cook';  --wrong approch
+
+select employee_id,Name,salary,salary+(salary-1000)*50/100
+ as New_Salary from employee
+where job='Cook';
+
+select * from employee where manager_id is null;
+select * from employee where salary is null;
+
+select employee_id ID, name Employee_Name from employee;
+
+select employee_id ID, name "Employee Name" from employee;
+ 
+select name || ' ' || 'is a' || ' ' || job as Details from employee;
+
+select distinct manager_id  from employee ;
+select Salary+100 from employee where job='Waiter';

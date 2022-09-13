@@ -29,3 +29,90 @@ select name || ' ' || 'is a' || ' ' || job as Details from employee;
 
 select distinct manager_id  from employee ;
 select Salary+100 from employee where job='Waiter';
+
+select employee_id , name ,job
+from employee
+where job='Waiter';
+
+select * from employee
+where employee_id=5501;
+
+select * from employee 
+where salary >= 8000;
+
+select * from employee
+where hire_date <>'01-JAN-15';
+
+
+select * from employee 
+where salary between 5000 and 7700;
+
+select * from employee
+where hire_date between '01-JAN-15' and  '01-MAR-15';
+
+select * from employee
+where employee_id between 5501 and 5504;
+
+select * from employee
+where employee_id in (5501,5503,5504,5505);
+
+select * from employee
+where name in ('Kevin','Lion','Lina');
+
+select * from employee
+where name like '_i%';
+
+select * from employee
+where name like 'K____';
+
+select * from employee
+where job like 'A%t';
+
+select * from employee
+where name like '%len';
+
+select * from employee
+where name like '_a%';
+
+select * from employee
+where salary>=7000 and job like 'W%';
+
+select * from employee
+where salary >=7000 or job like 'W%';
+
+select * from employee 
+where hire_date not in('01-JAN-15');
+
+select * from employee
+where hire_date='01-FEB-15' and job like'W%' and salary>=5000;
+
+select * from employee
+where hire_date='01-FEB-15' or job like'W%' or salary>=7000;
+
+select * from employee
+where hire_date not in('01-JAN-15') or job not in  ('Waiter');
+
+select * from employee 
+where job not in ('Waiter','Cook');
+
+ --precidence
+
+select * from employee
+where job='Waiter' and salary >=5500 or name like 'L%';
+
+
+select * from employee
+where job='Waiter' and (salary >=5500 or name like 'L%');
+
+select * from employee
+where job='Waiter';
+
+select name , salary , salary*12+((salary*50/100)*2) As Annual_INcome
+from employee
+order by Annual_INcome desc;
+
+select * from employee
+order by name asc,job asc,Salary desc;
+
+select * from employee
+order by salary Desc ;
